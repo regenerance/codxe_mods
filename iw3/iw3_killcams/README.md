@@ -134,4 +134,7 @@ The replay cleanup expects a map entity named `mp_global_intermission`. Custom m
 
 Keep the implementation in `scripts/_finalkillcam.gsc`. `_globallogic.gsc` should contain only the include, initialization call, player-killed hook, and endgame integration. This makes future updates easier and avoids maintaining two copies of the killcam code.
 
+## Notes for bugs
+If any bugs or issues happen, contact me or make a bug report on github.
+
 See [LICENSE](LICENSE) for licensing information.
