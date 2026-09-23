@@ -5,9 +5,6 @@ Final-killcam support for Call of Duty 4 multiplayer servers running CoD4X/CodXE
 The mod displays a cinematic replay of the last valid player kill when a round or game ends. The implementation is kept in its own script file and included by the multiplayer global-logic script.
 
 ## Features
-
-- Round-winning killcam with a `ROUND WINNING KILL` title.
-- Game-winning killcam with a `GAME WINNING KILL` title.
 - Works with both team-based and free-for-all scoring logic.
 - Skips the killcam when there was no valid player kill.
 - Skips suicides, world/environmental deaths, and invalid or disconnected attackers.
@@ -85,7 +82,7 @@ The script is designed around the stock global endgame flow, so it can be used b
 
 | Mode type | Behavior |
 | --- | --- |
-| Round-based modes such as Search and Destroy | Shows the last valid kill as a round-winning kill before the next round. |
+| Round-based modes such as Search and Destroy/Sabatage/Headquarters | Shows the last valid kill as a round-winning kill before the next round. |
 | Team-based score/time modes such as Team Deathmatch | Shows a game-winning kill when the match fully ends. |
 | Free-for-all modes such as Deathmatch | Uses the last valid player kill and the normal free-for-all winner. |
 | Games with no valid player kill | Skips the replay and continues through the normal game or round end. |
