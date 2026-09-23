@@ -1466,9 +1466,6 @@ endGame( winner, endReasonText )
 	if ( level.players.size > 0 && canStartFK( false ) )
 	{
 		wait 9;
-
-		// A player may disconnect during the delay, or the final-kill data may
-		// no longer be valid. Recheck before entering the killcam wait.
 		if ( canStartFK( false ) )
 		{
 			level.killcam_style = 0;

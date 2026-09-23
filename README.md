@@ -11,12 +11,11 @@ The mod displays a cinematic replay of the last valid player kill when a round o
 - Works with both team-based and free-for-all scoring logic.
 - Skips the killcam when there was no valid player kill.
 - Skips suicides, world/environmental deaths, and invalid or disconnected attackers.
-- Restores players to the intermission spawn after the replay.
 - Uses the normal game-end flow when no killcam is available.
 
 ## Requirements
 
-- A CoD4X/CodXE-compatible server with GSC script support.
+- A CoD4X/CodXE-compatible game with GSC script support.
 - A multiplayer setup that uses `maps/mp/gametypes/_globallogic.gsc`.
 - The `white` shader and `mp_global_intermission` spawnpoint available to the map.
 
@@ -24,7 +23,7 @@ The mod displays a cinematic replay of the last valid player kill when a round o
 
 The repository package is located under `iw3/iw3_killcams/`. Copy its contents into a mod directory, not the outer `iw3` directory.
 
-Your server should look similar to this:
+Your setup should look similar to this:
 
 ```text
 Call of Duty 4/
@@ -38,16 +37,10 @@ Call of Duty 4/
             └── _finalkillcam.gsc
 ```
 
-1. Stop the server.
+1. Unload the mod.
 2. Back up your existing `maps/mp/gametypes/_globallogic.gsc`.
 3. Copy the repository's `maps/mp/gametypes/_globallogic.gsc` and `scripts/_finalkillcam.gsc` into the matching paths inside your mod.
-4. Start the server with the mod enabled, for example:
-
-```text
-+set fs_game iw3_killcams +map mp_crash
-```
-
-Use the launch/configuration syntax appropriate for your server host.
+4. Start the match with the mod enabled.
 
 ### Installing into an existing mod
 
@@ -125,12 +118,12 @@ Check that:
 - `_finalkillcam.gsc` exists at `scripts/_finalkillcam.gsc` inside the active mod.
 - `_globallogic.gsc` contains `#include scripts\_finalkillcam;`.
 - Included functions are called without `scripts\_finalkillcam::`.
-- The server was fully restarted after changing the scripts.
+- The game was fully restarted after changing the scripts.
 - A `.gsx` version is not overriding the `.gsc` file unexpectedly.
 
 ### The killcam never appears
 
-Confirm that the kill was caused by another connected player. Suicides, grenade/world deaths, killstreak deaths, and disconnected attackers are intentionally ignored. Also verify that the server is actually loading this `_globallogic.gsc` override.
+Confirm that the kill was caused by another connected player. Suicides, grenade/world deaths, killstreak deaths, and disconnected attackers are intentionally ignored. Also verify that the game is actually loading this `_globallogic.gsc` override.
 
 ### The game does not end when nobody got a kill
 
